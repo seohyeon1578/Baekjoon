@@ -19,7 +19,7 @@ for i in range(len(plans)):
     if start + playtime <= next_start:
        answer.append(name)
        temp_time = next_start - (start + playtime)
-       while stack and temp_time != 0:
+       while stack:
            name, start, playtime = stack.pop()
            if temp_time >= playtime:
             answer.append(name)
@@ -27,7 +27,7 @@ for i in range(len(plans)):
            else:
             temp = [name ,start, playtime - temp_time]
             stack.append(temp)
-            temp_time = 0
+            break
 
     else:
         temp = [name, start, (start + playtime) - next_start]
