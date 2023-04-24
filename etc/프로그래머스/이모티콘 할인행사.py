@@ -2,15 +2,16 @@ def solution(users, emoticons):
     answer = [0, 0]
     data = [i for i in range(10, 41, 10) if i >= min(users)[0]]
     discount = []
-    
+
     def dfs(temp, depth):
         if depth == len(temp):
             discount.append(temp[:])
             return
         for d in data:
-            temp[depth] += d
+            print(d)
+            temp[depth] = d
+            print(temp)
             dfs(temp, depth + 1)
-            temp[depth] -= d
     
     dfs([0] * len(emoticons), 0)
 
