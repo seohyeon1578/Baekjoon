@@ -103,32 +103,65 @@
 # print(dp[num])
 
 # DFS, BFS로 탐색
-from collections import deque
-def dfs(idx):
-    global visited
-    visited[idx] = True
-    print(idx, end=" ")
-    for next in range(1, N + 1):
-        if not visited[next] and graph[idx][next]:
-            dfs(next)
-def bfs():
-    global visited
-    q = deque([V])
-    while q:
-        cur = q.popleft()
-        print(cur, end=" ")
-        for next in range(1, N + 1):
-            if not visited[next] and graph[cur][next]:
-                visited[next] = True
-                q.append(next)
-N, M, V = map(int, input().split())
-graph = [[False] * (N + 1) for _ in range(N + 1)]
-visited = [False] * (N + 1)
+# from collections import deque
+# def dfs(idx):
+#     global visited
+#     visited[idx] = True
+#     print(idx, end=" ")
+#     for next in range(1, N + 1):
+#         if not visited[next] and graph[idx][next]:
+#             dfs(next)
+# def bfs():
+#     global visited
+#     q = deque([V])
+#     while q:
+#         cur = q.popleft()
+#         print(cur, end=" ")
+#         for next in range(1, N + 1):
+#             if not visited[next] and graph[cur][next]:
+#                 visited[next] = True
+#                 q.append(next)
+# N, M, V = map(int, input().split())
+# graph = [[False] * (N + 1) for _ in range(N + 1)]
+# visited = [False] * (N + 1)
 
-for _ in range(M):
-    a, b = map(int, input().split())
-    graph[a][b] = True
-    graph[b][a] = True
-dfs(V)
-print()
-bfs() 
+# for _ in range(M):
+#     a, b = map(int, input().split())
+#     graph[a][b] = True
+#     graph[b][a] = True
+# dfs(V)
+# print()
+# bfs() 
+
+# from collections import deque
+# def solution(Data, d, k):
+#     queue = deque([1])
+#     cnt = 0
+#     while queue:
+#         x = queue.popleft()
+#         if x == len(Data) - 1:
+#             break
+#         if abs(Data[x] - Data[x + 1]) <= d:
+#             cnt += 1
+#             if cnt > k:
+#                 break
+#             del Data[x]
+#             queue.append(x)
+#         else:
+#             print('2')
+#             queue.append(x + 1)
+#     return Data
+
+# print(solution([1, 2, 3, 4, 5, 6, 7, 8], 1, 3))
+
+from collections import deque
+def solution(A, B, dis, dur):
+    answer = ""
+    queue = deque([A[0], B[0]])
+
+    while queue:
+        a, b = queue.popleft()
+        time = 0
+    return answer
+
+print(solution([1, 7], [3, 8], 2, 2))
